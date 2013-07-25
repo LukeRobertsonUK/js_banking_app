@@ -41,14 +41,19 @@ $(function() {
   };
 
  $('#deposit_one').on('click', function(e){
+    if(parseInt($('#amount_one').val()) !== NaN && parseInt($('#amount_one').val()) >= 0){
     depositMoney('one', parseInt($('#amount_one').val()));
+  };
   });
 
   $('#deposit_two').on('click', function(e){
+    if(parseInt($('#amount_two').val()) !== NaN && parseInt($('#amount_two').val()) >= 0){
     depositMoney('two', parseInt($('#amount_two').val()));
+    };
   });
 
  $('#withdraw_one').on('click', function(e){
+   if(parseInt($('#amount_one').val()) !== NaN && parseInt($('#amount_one').val()) >= 0){
     var amount = $('#amount_one').val()
     if(amount > (balanceOne+balanceTwo)){
     } else {
@@ -59,9 +64,11 @@ $(function() {
         withdrawMoney('one', amount);
       };
     };
+  };
   });
 
  $('#withdraw_two').on('click', function(e){
+   if(parseInt($('#amount_two').val()) !== NaN && parseInt($('#amount_two').val()) >= 0){
     var amount = $('#amount_two').val()
     if(amount > (balanceOne+balanceTwo)){
     } else {
@@ -72,6 +79,7 @@ $(function() {
         withdrawMoney('two', amount);
       };
     };
+  };
   });
 
 });
